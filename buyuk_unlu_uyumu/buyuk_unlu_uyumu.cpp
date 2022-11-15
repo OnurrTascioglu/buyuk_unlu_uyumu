@@ -1,6 +1,5 @@
 #include <iostream>
 
-using namespace std;
 
 int getStringSize(char* word) {
     int string_size = 0;
@@ -51,10 +50,10 @@ int main()
     char word[] = "kýrlangýç";     // kelime ç harfi içeriyorsa bazý derleyicilerde sonuç hatalý olabiliyor.
     bool result = vowelHarmony(word);
     if (result == true) {
-        cout << word << " buyuk unlu uyumuna uyar";
+        std::cout << word << " buyuk unlu uyumuna uyar";
     }
     else {
-        cout << word << " buyuk unlu uyumuna uymaz";
+        std::cout << word << " buyuk unlu uyumuna uymaz";
     }
     
     return 0;
