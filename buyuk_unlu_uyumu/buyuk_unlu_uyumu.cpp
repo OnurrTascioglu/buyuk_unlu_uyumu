@@ -23,9 +23,9 @@ bool stringCompare(char* word, const char* character_array,int string_size, int 
     return true;
 }
 
-bool buyukUnluUyumu(char* word){
-    const char kalin_harfler[] = "aýou";
-    const char ince_harfler[] = "eiöü";
+bool vowelHarmony(char* word){
+    const char bold_vowel[] = "aýou";
+    const char thin_vowel[] = "eiöü";
 
     int string_size = getStringSize(word);
     bool result = false;
@@ -33,12 +33,12 @@ bool buyukUnluUyumu(char* word){
 
     for (int i = 0; i < string_size; i++) {
         for(int j = 0; j < 4 ; j++)              // 4 = kalin_harfler, ince_harfler dizisi boyutu
-           if (word[i] == kalin_harfler[j]) {
-               result = stringCompare(word, ince_harfler, string_size, 4);
+           if (word[i] == bold_vowel[j]) {
+               result = stringCompare(word, thin_vowel, string_size, 4);
                break;
            }
-           else if (word[i] == ince_harfler[j]) {
-               result = stringCompare(word, kalin_harfler, string_size, 4);
+           else if (word[i] == thin_vowel[j]) {
+               result = stringCompare(word, bold_vowel, string_size, 4);
                break;
            }
     }
@@ -48,8 +48,8 @@ bool buyukUnluUyumu(char* word){
 
 int main()
 {
-    char word[] = "üzengi";
-    bool result = buyukUnluUyumu(word);
+    char word[] = "kýrlangýç";     // kelime ç harfi içeriyorsa bazý derleyicilerde sonuç hatalý olabiliyor.
+    bool result = vowelHarmony(word);
     if (result == true) {
         cout << word << " buyuk unlu uyumuna uyar";
     }
