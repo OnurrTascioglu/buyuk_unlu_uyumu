@@ -24,8 +24,8 @@ bool stringCompare(char* word, const char* character_array,int string_size, int 
 }
 
 bool vowelHarmony(char* word){
-    const char bold_vowel[] = "aýou";
-    const char thin_vowel[] = "eiöü";
+    const char bold_vowels[] = "aýou";
+    const char thin_vowels[] = "eiöü";
 
     int string_size = getStringSize(word);
     bool result = false;
@@ -33,12 +33,12 @@ bool vowelHarmony(char* word){
 
     for (int i = 0; i < string_size; i++) {
         for(int j = 0; j < 4 ; j++)              // 4 = kalin_harfler, ince_harfler dizisi boyutu
-           if (word[i] == bold_vowel[j]) {
-               result = stringCompare(word, thin_vowel, string_size, 4);
+           if (word[i] == bold_vowels[j]) {
+               result = stringCompare(word, thin_vowels, string_size, 4);
                break;
            }
-           else if (word[i] == thin_vowel[j]) {
-               result = stringCompare(word, bold_vowel, string_size, 4);
+           else if (word[i] == thin_vowels[j]) {
+               result = stringCompare(word, bold_vowels, string_size, 4);
                break;
            }
     }
