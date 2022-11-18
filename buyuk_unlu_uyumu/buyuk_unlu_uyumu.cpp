@@ -1,4 +1,5 @@
 #include <iostream>
+#include<locale.h> 
 
 
 int getStringSize(char* word) {
@@ -47,7 +48,9 @@ bool vowelHarmony(char* word){
 
 int main()
 {
-    char word[] = "kýrlangýç";     // kelime ç harfi içeriyorsa bazý derleyicilerde sonuç hatalý olabiliyor.
+    setlocale(LC_ALL, "Turkish");
+
+    char word[] = "alfabe";     // kelime ç harfi içeriyorsa bazý derleyicilerde sonuç hatalý olabiliyor.
     bool result = vowelHarmony(word);
     if (result == true) {
         std::cout << word << " buyuk unlu uyumuna uyar";
