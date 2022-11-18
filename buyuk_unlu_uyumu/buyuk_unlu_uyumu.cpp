@@ -1,6 +1,5 @@
 #include <iostream>
 #include <locale.h> 
-#include <cctype>
 
 int getStringSize(wchar_t* word) {
     int string_size = 0;
@@ -58,7 +57,6 @@ int main()
     else {
         std::wcout << "Buyuk unlu uyumuna uymaz";
     }
-
 
     return 0;
 }
