@@ -48,6 +48,7 @@ bool vowelHarmony(wchar_t* word) {
 int main()
 {
     setlocale(LC_ALL, "Turkish");
+
     wchar_t word[] = L"kýrlangýç";
 
     bool result = vowelHarmony(word);
